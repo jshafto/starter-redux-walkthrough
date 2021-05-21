@@ -36,5 +36,3 @@ dispatch(updateMyState(newState));
 // anytime i see that i am ONLY using the value to pass it as a prop
 // i should just remove it from that component all together
 ```
-
-# Redux Reminders
