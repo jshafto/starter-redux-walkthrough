@@ -1,14 +1,22 @@
 import React from "react";
 
-const AddBar = () => {
+const AddBar = ({ toDo, setToDo, items, setItems }) => {
     const input = (e) => {
-        console.log(e);
+        console.log(e.target.value);
+        setToDo(e.target.value);
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setItems([ ...items, 
+            {text: toDo, completed: false, id }]);
+        setToDo("");
+    }
 
     return (
         <form>
-            <input type="text" className="todo-item" />
-            <button className="add-button" type="submit">
+            <input onClick={input} type="text" className="todo-item" />
+            <button onClick={handleSubmit} className="add-button" type="submit">
                 <i className="+"></i>
             </button>
             <div className="select">

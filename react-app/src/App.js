@@ -15,6 +15,7 @@ function App() {
   const user = useSelector(state => state.session.user)
   const [loaded, setLoaded] = useState(false);
   const [toDo, setToDo] = useState("");
+  const [items, setItems] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +34,11 @@ function App() {
       <header>
         <h1>Quick and Sloppily Made To-Do-List-App</h1>
       </header>
-      <AddBar />
+      <AddBar 
+        toDo={toDo} 
+        setToDo={setToDo} 
+        items={items} 
+        setItems={setItems} />
       <List />
     </div>
   );
