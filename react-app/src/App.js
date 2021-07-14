@@ -18,17 +18,6 @@ function App() {
   const [items, setItems] = useState([]);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    (async() => {
-      await dispatch(authenticate());
-      setLoaded(true);
-    })();
-  }, []);
-
-  if (!loaded) {
-    return null;
-  }
-
   return (
     <div className="Main">
       <header>
