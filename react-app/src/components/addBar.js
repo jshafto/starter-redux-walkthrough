@@ -9,13 +9,13 @@ const AddBar = ({ toDo, setToDo, items, setItems }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setItems([ ...items, 
-            {text: toDo, completed: false, id }]);
+            {text: toDo, completed: false, id: Math.random() * 1000}]);
         setToDo("");
     }
 
     return (
         <form>
-            <input onClick={input} type="text" className="todo-item" />
+            <input value={toDo} onClick={input} type="text" className="todo-item" />
             <button onClick={handleSubmit} className="add-button" type="submit">
                 <i className="+"></i>
             </button>

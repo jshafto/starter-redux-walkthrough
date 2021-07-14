@@ -39,7 +39,7 @@ function App() {
         setToDo={setToDo} 
         items={items} 
         setItems={setItems} />
-      <List />
+      <List items={items} setItems={setItems} />
     </div>
   );
 }
